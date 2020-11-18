@@ -1,0 +1,148 @@
+$color-grey-light-1: #f7f7f7;
+$color-primary-light:rgba(126,213,111,1);
+$color-primary-dark:rgba(40,180,131,1);
+$grid-width:90rem;
+$space-between-rows:7rem;
+$gutter-width:5%;
+
+@mixin clearfix {
+   &::after {
+    content: "";
+    display: table;
+    clear: both;
+   }
+}
+main{
+}
+.section-about{
+    min-height: 200vh;
+    background-color:  $color-grey-light-1;
+    padding: 16rem 0;
+    margin-top: -15vh;
+}
+
+.heading-secondary{
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark );
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all .2s;
+    letter-spacing: 2px;
+
+    &:hover{
+        transform: scale(1.05);
+        text-shadow: .5rem 1rem 2rem rgba(0,0,0,0.2);
+    }
+}
+
+//Utility Class
+.u-center-text{
+    text-align: center;
+}
+.u-margin-bottom-6{
+    margin-bottom: 6rem;
+}
+.row{
+    max-width:$grid-width;
+    margin: 0 auto;
+    //It will apply margin-bottom to all elements except lastone
+    &:not(:last-child){
+    margin-bottom: $space-between-rows;
+    }
+
+    //Classes starting with col-
+    [class^='col-']{
+        float: left;
+        height: 20px;
+        &:not(:last-child){
+            margin-right: 5%;
+            }
+    }
+    //Clearfix
+    @include clearfix;
+
+
+    .col-1-of-2{
+        width: calc((100% - #{$gutter-width})/2);  
+    }
+}
+
+.heading-tertiary{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.paragraph{
+    font-size: 1.3rem;
+
+    &:not(:last-child)
+    {
+        margin-bottom: 3rem;
+    }
+}
+.u-margin-bottom-2{
+    margin-bottom: 2rem;
+}
+.u-padding-left-4{
+    padding-left: 4rem;
+}
+
+.btn-text{
+
+    &:link,&:visited{
+        font-size: 1.5rem;
+        color:$color-primary-light;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary-light;
+        padding: 3px;
+        transition: all .2s;
+    }
+    &:hover{
+        background-color: $color-primary-light;
+        color: white;
+        box-shadow: 0 1rem 2rem rgba(0,0,0,0.2) ;
+        transform: translateY(-1px);
+    }
+    &:active{
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2) ;
+        transform: translateY(0px);
+    }
+}
+
+.composition{
+    position: relative;
+    &__photo{
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.4);
+        border-radius: 2px;
+        position: absolute;
+        z-index:10;
+        transition: all .2s;
+        outline-offset: 1rem;
+        &--p1{
+            left:0;
+            top:-2rem;
+        }
+        &--p2{
+            right:0;
+            top:2rem;
+        }
+        &--p3{
+            left:20%;
+            top:10rem;
+        }
+
+        &:hover{
+            outline: 0.8rem solid $color-primary-light;
+            transform: scale(1.05);
+            box-shadow: 0 2.5rem 4rem rgba(0,0,0,0.6);
+            z-index: 20;
+        }
+    }
+
+}

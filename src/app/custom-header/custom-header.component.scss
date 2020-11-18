@@ -9,7 +9,7 @@ $color-black:black;
     url('../../assets/img/hero.jpg');
     background-position: top;
     background-size: cover;
-    clip-path: polygon(0 0, 100% 0,100% 85%,0% 100%);
+    clip-path: polygon(0 0, 100% 0,100% 75vh,0% 100%);
     position: relative;
 
     &__logo-box{
