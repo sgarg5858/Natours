@@ -12,10 +12,9 @@ $gutter-width:5%;
     clear: both;
    }
 }
-main{
-}
+
 .section-about{
-    min-height: 120vh;
+    min-height: 130vh;
     height: auto;
     background-color:  $color-grey-light-1;
     padding: 16rem 0;
@@ -50,6 +49,7 @@ main{
 .row{
     max-width:$grid-width;
     margin: 0 auto;
+    padding: 0 5rem;
     //It will apply margin-bottom to all elements except lastone
     &:not(:last-child){
     margin-bottom: $space-between-rows;
@@ -69,6 +69,9 @@ main{
 
     .col-1-of-2{
         width: calc((100% - #{$gutter-width})/2);  
+    }
+    .col-1-of-3{
+        width: calc((100% - 2 * #{$gutter-width})/3);   
     }
     .col-1-of-4{
         width: calc((100% - 3 * #{$gutter-width})/4);  
@@ -166,6 +169,15 @@ main{
     url('../../assets/img/nat-4.jpg');
     background-size: cover;
     background-position: top;
+
+    //use clip-path or skew
+    transform: skewY(-4deg);
+    margin-top: -5rem;
+
+    & > *{
+        transform: skewY(4deg);   
+    }
+
 }
 
 .feature-box{
@@ -189,5 +201,67 @@ main{
     }
     &:hover{
         transform: translateY(-1rem) scale(1.02);
+    }
+}
+
+// *******************TOURS SECTION******************************
+
+$color-orange-light:#ffb900;
+$color-orange-dark:#ff7730;
+$color-blue-light:#2998ff;
+$color-blue-dark:#5643fa;
+
+.section-tours
+{
+    min-height: 100vh;
+    padding: 15rem 0;
+    margin-top: -5rem;
+
+    background-color: $color-grey-light-1;
+}
+.card{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 23rem;
+
+    &__side{
+        color: white;
+        font-size: 1.5rem;
+        height: 23rem;
+        transition: all .8s;
+        position: absolute;
+        top: 0;
+        left:0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        box-shadow: 0 1rem 4rem rgba(0,0,0,0.2);
+        
+        &--front{
+
+                }
+
+        &--back{
+            transform: rotateY(180deg);
+
+            &-1{
+                background-image: linear-gradient(to right bottom, $color-orange-light,$color-orange-dark);
+            }
+            &-2{
+                background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary-dark);
+            }
+            &-3{
+                background-image: linear-gradient(to right bottom, $color-blue-light,$color-blue-dark);
+            }
+
+        }
+    }
+
+    &:hover &__side--front{
+        transform: rotateY(180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0);
     }
 }
