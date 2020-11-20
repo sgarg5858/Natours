@@ -1,0 +1,44 @@
+$color-grey-light-1: #f7f7f7;
+$color-primary-light:rgba(126,213,111,1);
+$color-primary-dark:rgba(40,180,131,1);
+$grid-width:90rem;
+$space-between-rows:7rem;
+$gutter-width:5%;
+
+
+.navigation{
+
+    &__background{
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        position: fixed;
+        top:4.5rem;
+        right: 4.5rem;
+        background-image: radial-gradient($color-primary-light,$color-primary-dark);
+        z-index: 10000;
+    }
+    &__checkbox{
+
+    }
+    &__button{
+        background-color: white;
+        height: 5.5rem;
+        width: 5.5rem;
+        position: fixed;
+        top:4rem;
+        right:4rem;
+        border-radius: 50%;
+        z-index: 11111;
+    }
+    &__nav{
+
+    }
+    &__list{
+
+    }
+    &__item{
+
+    }
+    &__link{}
+}

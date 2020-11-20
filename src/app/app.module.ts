@@ -7,6 +7,7 @@ import { CustomHeaderComponent } from './custom-header/custom-header.component';
 import { CustomSectionComponent } from './custom-section/custom-section.component';
 import { AboutSectionComponent } from './about-section/about-section.component';
 import { ReviewsSectionComponent } from './reviews-section/reviews-section.component';
+import { CustomNavigationComponent } from './custom-navigation/custom-navigation.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ReviewsSectionComponent } from './reviews-section/reviews-section.compo
     CustomHeaderComponent,
     CustomSectionComponent,
     AboutSectionComponent,
-    ReviewsSectionComponent
+    ReviewsSectionComponent,
+    CustomNavigationComponent
   ],
   imports: [
     BrowserModule,
